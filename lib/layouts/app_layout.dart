@@ -5,7 +5,7 @@ import 'package:project_test/bloc/states/app_states.dart';
 
 class AppLayout extends StatelessWidget {
   const AppLayout({Key key}) : super(key: key);
-
+///////////////test hunter////
   @override
   Widget build(BuildContext context) {
     var cubit = Appcubit.get(context);
