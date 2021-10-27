@@ -17,32 +17,35 @@ class AppLayout extends StatelessWidget {
             elevation: 0,
             title: Image(
               image: AssetImage('assets/images/logo.png'),
-              width: 120,
+              width: 110,
               height: 100,
             ),
             actions: [
               Row(
                 children: [
                   Icon(
-                    Icons.live_tv_rounded,
+                    Icons.cast,
                     color: Colors.black,
+                    size: 22.0,
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 20.0,
                   ),
                   Icon(
                     Icons.notifications_active_outlined,
                     color: Colors.black,
+                    size: 22.0,
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 20.0,
                   ),
                   Icon(
                     Icons.search,
                     color: Colors.black,
+                    size: 22.0,
                   ),
                   SizedBox(
-                    width: 10,
+                    width: 20,
                   ),
                   CircleAvatar(
                     radius: 15,
@@ -75,13 +78,13 @@ class AppLayout extends StatelessWidget {
               ),
               BottomNavigationBarItem(
                 backgroundColor: Colors.white,
-                icon: Icon(Icons.library_books_outlined),
-                label: 'Library',
+                icon: Icon(Icons.subscriptions_outlined),
+                label: 'Subscriptions',
               ),
               BottomNavigationBarItem(
                 backgroundColor: Colors.white,
-                icon: Icon(Icons.subscriptions_outlined),
-                label: 'Subscriptions',
+                icon: Icon(Icons.video_library_outlined),
+                label: 'Library',
               ),
             ],
           ),
