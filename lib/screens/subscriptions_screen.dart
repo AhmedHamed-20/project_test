@@ -102,7 +102,7 @@ class SubscriptionsScreen extends StatelessWidget {
                             onPressed: () {},
                             text: 'UnWatching',
                             height: 40,
-                            width: 200,
+                            width: 150,
                             radius: 20,
                           ),
                           const SizedBox(

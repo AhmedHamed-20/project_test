@@ -14,14 +14,14 @@ Widget default_Button({
     clipBehavior: Clip.antiAlias,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(radius),
-      color: Colors.grey[400],
+      color: Colors.grey[500],
     ),
     child: MaterialButton(
       onPressed: onPressed,
       child: Text(
         isUpperCase ? text.toString().toUpperCase() : text,
         style: const TextStyle(
-          fontSize: 18,
+          fontSize: 16,
           color: Colors.white,
         ),
       ),
