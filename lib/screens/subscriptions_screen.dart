@@ -145,7 +145,7 @@ class SubscriptionsScreen extends StatelessWidget {
                   child: ListView.separated(
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemBuilder: (context, index) => video(),
+                    itemBuilder: (context, index) => subscribtion_vedio_item(),
                     separatorBuilder: (context, index) => const SizedBox(
                       height: 20.0,
                     ),
@@ -156,5 +156,16 @@ class SubscriptionsScreen extends StatelessWidget {
             ),
           );
         });
+  }
+
+  Widget subscribtion_vedio_item() {
+    return video(
+      video_photo_url: 'assets/images/home_photo.jpeg',
+      vide_name: 'HONOR 50-واخيرا مميزات وعيوب',
+      channel_photo_url: 'assets/images/profile_photo.jpeg',
+      channel_name: 'Abdallah Rakha عبدالله رخا ',
+      views: '19k',
+      publish_time: '16 hours ago',
+    );
   }
 }

@@ -14,7 +14,7 @@ Widget video({
         height: 200.0,
         width: double.infinity,
         child: Image(
-          image: AssetImage('assets/images/home_photo.jpeg'),
+          image: AssetImage('$video_photo_url'),
         ),
       ),
       const SizedBox(
@@ -26,7 +26,7 @@ Widget video({
           children: [
             CircleAvatar(
               radius: 20.0,
-              foregroundImage: AssetImage('assets/images/profile_photo.jpeg'),
+              foregroundImage: AssetImage('$channel_photo_url'),
             ),
             const SizedBox(
               width: 10.0,
@@ -35,7 +35,7 @@ Widget video({
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'HONOR 50-واخيرا مميزات وعيوب',
+                  '$vide_name',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
@@ -45,21 +45,21 @@ Widget video({
                 Row(
                   children: [
                     Text(
-                      'Abdallah Rakha عبدالله رخا  .',
+                      '$channel_name.',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,
                       ),
                     ),
                     Text(
-                      '19k views .',
+                      '$views views .',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,
                       ),
                     ),
                     Text(
-                      '16 hours ago',
+                      '$publish_time',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,

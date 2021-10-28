@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) {
         return ListView.separated(
           physics: const BouncingScrollPhysics(),
-          itemBuilder: (context, index) => video(),
+          itemBuilder: (context, index) => buildHome(),
           separatorBuilder: (context, index) => const SizedBox(
             height: 20.0,
           ),
@@ -25,14 +25,14 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Widget buildHome() {
-  //   return video(
-  //     video_photo_url: 'assets/images/home_photo.jpeg',
-  //     vide_name: 'HONOR 50-واخيرا مميزات وعيوب',
-  //     channel_photo_url: 'assets/images/profile_photo.jpeg',
-  //     channel_name: 'Abdallah Rakha عبدالله رخا ',
-  //     views: '19k',
-  //     publish_time: '16 hours ago',
-  //   );
-  // }
+  Widget buildHome() {
+    return video(
+      video_photo_url: 'assets/images/home_photo.jpeg',
+      vide_name: 'HONOR 50-واخيرا مميزات وعيوب',
+      channel_photo_url: 'assets/images/profile_photo.jpeg',
+      channel_name: 'Abdallah Rakha عبدالله رخا ',
+      views: '19k',
+      publish_time: '16 hours ago',
+    );
+  }
 }
