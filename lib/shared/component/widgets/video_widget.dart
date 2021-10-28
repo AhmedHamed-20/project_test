@@ -10,14 +10,14 @@ Widget video({
 }) {
   return Column(
     children: [
-      Container(
+      SizedBox(
         height: 200.0,
-        width: 360.0,
+        width: double.infinity,
         child: Image(
-          image: AssetImage(video_photo_url),
+          image: AssetImage('assets/images/home_photo.jpeg'),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 8.0,
       ),
       Padding(
@@ -26,40 +26,40 @@ Widget video({
           children: [
             CircleAvatar(
               radius: 20.0,
-              foregroundImage: AssetImage(channel_photo_url),
+              foregroundImage: AssetImage('assets/images/profile_photo.jpeg'),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10.0,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  vide_name,
+                  'HONOR 50-واخيرا مميزات وعيوب',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w800,
                   ),
                 ),
                 Row(
                   children: [
                     Text(
-                      '${channel_name} .',
+                      'Abdallah Rakha عبدالله رخا  .',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,
                       ),
                     ),
                     Text(
-                      '${views} views .',
+                      '19k views .',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,
                       ),
                     ),
                     Text(
-                      publish_time,
+                      '16 hours ago',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,
