@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_test/bloc/cubit/app_cubit.dart';
 import 'package:project_test/bloc/states/app_states.dart';
+import 'package:project_test/screens/shorts_screen.dart';
 
 class AppLayout extends StatelessWidget {
   const AppLayout({Key key}) : super(key: key);
@@ -10,11 +11,10 @@ class AppLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     var cubit = Appcubit.get(context);
     return BlocConsumer<Appcubit, AppStates>(
-       listener: (context, state) {},
+      listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            
             title: const Image(
               image: AssetImage('assets/images/logo.png'),
               width: 110,
@@ -58,9 +58,16 @@ class AppLayout extends StatelessWidget {
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
-           
+            showUnselectedLabels: true,
             onTap: (index) {
-              cubit.changBottomnavScreen(index);
+              if (index != 1) {
+                cubit.currentindex = index;
+                cubit.changeState();
+              } else {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ShortsScreen()),
+                );
+              }
             },
             currentIndex: cubit.currentindex,
             items: cubit.bottomNavItem,

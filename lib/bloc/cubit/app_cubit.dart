@@ -11,35 +11,34 @@ class Appcubit extends Cubit<AppStates> {
   Appcubit() : super(Appintistate());
   static Appcubit get(context) => BlocProvider.of(context);
 
+  ////////////////variable//////////////////
 
- ////////////////variable//////////////////
- 
   int currentindex = 0;
 
-  List<BottomNavigationBarItem> bottomNavItem =const [
-              BottomNavigationBarItem(
-                backgroundColor: Colors.white,
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                backgroundColor: Colors.white,
-                icon: Icon(Icons.movie_creation_outlined),
-                label: 'Shorts',
-              ),
-              BottomNavigationBarItem(
-                backgroundColor: Colors.white,
-                icon: Icon(Icons.subscriptions_outlined),
-                label: 'Subscriptions',
-              ),
-              BottomNavigationBarItem(
-                backgroundColor: Colors.white,
-                icon: Icon(Icons.video_library_outlined),
-                label: 'Library',
-              ),
-            ];
+  List<BottomNavigationBarItem> bottomNavItem = const [
+    BottomNavigationBarItem(
+      backgroundColor: Colors.white,
+      icon: Icon(Icons.home),
+      label: 'Home',
+    ),
+    BottomNavigationBarItem(
+      backgroundColor: Colors.white,
+      icon: Icon(Icons.movie_creation_outlined),
+      label: 'Shorts',
+    ),
+    BottomNavigationBarItem(
+      backgroundColor: Colors.white,
+      icon: Icon(Icons.subscriptions_outlined),
+      label: 'Subscriptions',
+    ),
+    BottomNavigationBarItem(
+      backgroundColor: Colors.white,
+      icon: Icon(Icons.video_library_outlined),
+      label: 'Library',
+    ),
+  ];
 
-  List<Widget> screen =const [
+  List<Widget> screen = const [
     HomeScreen(),
     ShortsScreen(),
     SubscriptionsScreen(),
@@ -59,5 +58,9 @@ class Appcubit extends Cubit<AppStates> {
     currentindex = index;
 
     emit(ChangebottomState());
+  }
+
+  changeState() {
+    emit(ChangeState());
   }
 }

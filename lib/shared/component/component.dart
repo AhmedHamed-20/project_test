@@ -28,3 +28,75 @@ Widget default_Button({
     ),
   );
 }
+
+Widget reelsSideIcons() {
+  return Container(
+    width: 50,
+    height: 250,
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Icon(
+          Icons.more_horiz,
+          color: Colors.white,
+        ),
+        Column(
+          children: [
+            Icon(
+              Icons.thumb_up,
+              color: Colors.white,
+            ),
+            Text(
+              '71k',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            Icon(
+              Icons.thumb_down,
+              color: Colors.white,
+            ),
+            Text(
+              'Dislike',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            Icon(
+              Icons.insert_comment,
+              color: Colors.white,
+            ),
+            Text(
+              '500',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            Icon(
+              Icons.reply,
+              color: Colors.white,
+            ),
+            Text(
+              'SHARE',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
+      ],
+    ),
+  );
+}
