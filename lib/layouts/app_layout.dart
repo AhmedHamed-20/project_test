@@ -60,10 +60,13 @@ class AppLayout extends StatelessWidget {
           bottomNavigationBar: BottomNavigationBar(
             showUnselectedLabels: true,
             onTap: (index) {
+              //check if index not 1 so use bottomnavBar default navigation
               if (index != 1) {
                 cubit.currentindex = index;
+                //to change state and open another screen
                 cubit.changeState();
               } else {
+                //else use my navigator to open shorts screen like a page not part of bottomnavBar
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => ShortsScreen()),
                 );
