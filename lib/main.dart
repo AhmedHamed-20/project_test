@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_test/bloc/cubit/app_cubit.dart';
 import 'package:project_test/bloc/states/app_states.dart';
+import 'package:project_test/shared/style/theme.dart';
 
 import 'layouts/app_layout.dart';
 
@@ -20,26 +21,14 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (BuildContext context) => Appcubit()),
       ],
       child: BlocConsumer<Appcubit, AppStates>(
+         listener: (context, state) {},
         builder: (context, state) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Flutter Demo',
-            theme: ThemeData(
-              // This is the theme of your application.
-              //
-              // Try running your application with "flutter run". You'll see the
-              // application has a blue toolbar. Then, without quitting the app, try
-              // changing the primarySwatch below to Colors.green and then invoke
-              // "hot reload" (press "r" in the console where you ran "flutter run",
-              // or simply save your changes to "hot reload" in a Flutter IDE).
-              // Notice that the counter didn't reset back to zero; the application
-              // is not restarted.
-              primarySwatch: Colors.blue,
-            ),
+            theme: lightMode ,
             home: const AppLayout(),
           );
-        },
-        listener: (context, state) {},
+        },      
       ),
     );
   }
