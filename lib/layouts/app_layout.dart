@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_test/bloc/cubit/app_cubit.dart';
 import 'package:project_test/bloc/states/app_states.dart';
+import 'package:project_test/screens/notifications_screen.dart';
 import 'package:project_test/screens/shorts_screen.dart';
+import 'package:project_test/shared/component/widgets/navigate.dart';
 
 class AppLayout extends StatelessWidget {
   const AppLayout({Key key}) : super(key: key);
@@ -22,7 +24,8 @@ class AppLayout extends StatelessWidget {
             ),
             actions: [
               Row(
-                children: const [
+                children:
+                [
                   Icon(
                     Icons.cast,
                     color: Colors.black,
@@ -31,10 +34,16 @@ class AppLayout extends StatelessWidget {
                   SizedBox(
                     width: 20.0,
                   ),
-                  Icon(
+                  IconButton(
+                    onPressed:()
+                    {
+                      Navigate(Screen: NotificationsScreen(),context: context);
+                    },
+                    icon: Icon(
                     Icons.notifications_active_outlined,
                     color: Colors.black,
                     size: 22.0,
+                  ),
                   ),
                   SizedBox(
                     width: 20.0,
