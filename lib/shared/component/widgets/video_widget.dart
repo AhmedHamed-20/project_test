@@ -10,14 +10,14 @@ Widget video({
 }) {
   return Column(
     children: [
-      Container(
+      SizedBox(
         height: 200.0,
-        width: 360.0,
+        width: double.infinity,
         child: Image(
-          image: AssetImage(video_photo_url),
+          image: AssetImage('$video_photo_url'),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 8.0,
       ),
       Padding(
@@ -26,40 +26,40 @@ Widget video({
           children: [
             CircleAvatar(
               radius: 20.0,
-              foregroundImage: AssetImage(channel_photo_url),
+              foregroundImage: AssetImage('$channel_photo_url'),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10.0,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  vide_name,
+                  '$vide_name',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontWeight: FontWeight.w800,
                   ),
                 ),
                 Row(
                   children: [
                     Text(
-                      '${channel_name} .',
+                      '$channel_name.',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,
                       ),
                     ),
                     Text(
-                      '${views} views .',
+                      '$views views .',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,
                       ),
                     ),
                     Text(
-                      publish_time,
+                      '$publish_time',
                       style: TextStyle(
                         color: Colors.grey[700],
                         fontSize: 12.0,
