@@ -7,13 +7,13 @@ Widget subscribe_chanal_item() {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Stack(
-          children: [
-            const CircleAvatar(
+          children: const [
+            CircleAvatar(
               radius: 35,
               foregroundImage: AssetImage('assets/images/profile_photo.jpeg'),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.only(
+              padding: EdgeInsetsDirectional.only(
                 start: 51,
                 top: 48,
               ),
