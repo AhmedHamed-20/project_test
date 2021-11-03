@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_test/bloc/cubit/app_cubit.dart';
 import 'package:project_test/bloc/states/app_states.dart';
 import 'package:project_test/screens/notifications_screen.dart';
+import 'package:project_test/screens/search_screen.dart';
 import 'package:project_test/screens/shorts_screen.dart';
 import 'package:project_test/shared/component/widgets/navigate.dart';
 
@@ -24,8 +25,7 @@ class AppLayout extends StatelessWidget {
             ),
             actions: [
               Row(
-                children:
-                [
+                children: [
                   Icon(
                     Icons.cast,
                     color: Colors.black,
@@ -35,29 +35,36 @@ class AppLayout extends StatelessWidget {
                     width: 20.0,
                   ),
                   IconButton(
-                    onPressed:()
-                    {
-                      Navigate(Screen: NotificationsScreen(),context: context);
+                    onPressed: () {
+                      Navigate(Screen: NotificationsScreen(), context: context);
                     },
                     icon: Icon(
-                    Icons.notifications_active_outlined,
-                    color: Colors.black,
-                    size: 22.0,
-                  ),
+                      Icons.notifications_active_outlined,
+                      color: Colors.black,
+                      size: 22.0,
+                    ),
                   ),
                   SizedBox(
                     width: 20.0,
                   ),
-                  Icon(
-                    Icons.search,
-                    color: Colors.black,
-                    size: 22.0,
+                  InkWell(
+                    onTap: () {
+                      Navigate(context: context, Screen: SearchScreen());
+                    },
+                    child: Icon(
+                      Icons.search,
+                      color: Colors.black,
+                      size: 22.0,
+                    ),
                   ),
                   SizedBox(
                     width: 20,
                   ),
                   CircleAvatar(
-                    radius: 15,
+                    radius: 20,
+                    backgroundColor: Colors.transparent,
+                    backgroundImage: NetworkImage(
+                        'https://ouch-cdn2.icons8.com/ptoWy6sj3pz4wYck5VEVBUWv0oqKvvZC7xlal9zeOjA/rs:fit:392:330/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNDUw/Lzg0ODAwMWY0LTNi/YmMtNDhkMS04MjJi/LThkZTI0YWFmNWEw/YS5wbmc.png'),
                   ),
                   SizedBox(
                     width: 15,

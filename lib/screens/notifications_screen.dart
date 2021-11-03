@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_test/screens/search_screen.dart';
+import 'package:project_test/shared/component/widgets/navigate.dart';
 import 'package:project_test/shared/component/widgets/notifications_build.dart';
 
 class NotificationsScreen extends StatelessWidget {
@@ -13,9 +15,9 @@ class NotificationsScreen extends StatelessWidget {
           'Notifications',
           style: TextStyle(
             color: Colors.black,
-          ),),
-        actions:
-        [
+          ),
+        ),
+        actions: [
           IconButton(
             icon: Icon(Icons.cast),
             iconSize: 20.0,
@@ -27,6 +29,7 @@ class NotificationsScreen extends StatelessWidget {
             icon: Icon(Icons.search),
             onPressed: () {
               // handle the press
+              Navigate(Screen: SearchScreen(), context: context);
             },
           ),
           IconButton(
@@ -37,10 +40,10 @@ class NotificationsScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: ListView.separated(itemBuilder:
-          (context,index)=> notificationBuild(),
-        separatorBuilder:(context,index)=>  SizedBox(
-          height: 20.0 ,
+      body: ListView.separated(
+        itemBuilder: (context, index) => notificationBuild(),
+        separatorBuilder: (context, index) => SizedBox(
+          height: 20.0,
         ),
         itemCount: 10,
       ),

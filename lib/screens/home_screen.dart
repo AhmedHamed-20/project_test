@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) {
         return ListView.separated(
           physics: const BouncingScrollPhysics(),
-          itemBuilder: (context, index) => buildHome(),
+          itemBuilder: (context, index) => buildHome(context),
           separatorBuilder: (context, index) => const SizedBox(
             height: 20.0,
           ),
@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget buildHome() {
+  Widget buildHome(context) {
     return video(
       video_photo_url: 'assets/images/home_photo.jpeg',
       vide_name: 'HONOR 50-واخيرا مميزات وعيوب',
