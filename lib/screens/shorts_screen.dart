@@ -16,9 +16,9 @@ class ShortsScreen extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
-          actions: [
+          actions: const [
             Padding(
-              padding: const EdgeInsets.only(right: 12.0),
+              padding: EdgeInsets.only(right: 12.0),
               child: Icon(
                 Icons.camera_alt_outlined,
                 color: Colors.white,
@@ -43,8 +43,8 @@ class ShortsScreen extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 12),
+                              const Padding(
+                                padding: EdgeInsets.only(left: 12),
                                 child: Text(
                                   'What\'s amazing',
                                   style: TextStyle(
@@ -62,22 +62,22 @@ class ShortsScreen extends StatelessWidget {
                                   children: [
                                     Row(
                                       children: [
-                                        CircleAvatar(
+                                        const CircleAvatar(
                                           radius: 15,
                                           backgroundImage: AssetImage(
                                               'assets/images/profile_photo.jpeg'),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 15,
                                         ),
-                                        Text(
+                                        const Text(
                                           'Ahmed Hamed',
                                           style: TextStyle(
                                             color: Colors.white,
                                             fontSize: 12,
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 8,
                                         ),
                                         MaterialButton(
@@ -86,7 +86,7 @@ class ShortsScreen extends StatelessWidget {
                                                 BorderRadius.circular(5),
                                           ),
                                           onPressed: () {},
-                                          child: Text(
+                                          child: const Text(
                                             'SUBSCRIBE',
                                             style: TextStyle(
                                                 color: Colors.white,
@@ -104,7 +104,7 @@ class ShortsScreen extends StatelessWidget {
                                           color: Colors.white,
                                           width: 2,
                                         ),
-                                        image: DecorationImage(
+                                        image: const DecorationImage(
                                           image: AssetImage(
                                             'assets/images/profile_photo.jpeg',
                                           ),

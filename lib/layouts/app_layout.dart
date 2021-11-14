@@ -9,7 +9,7 @@ import 'package:project_test/shared/component/widgets/navigate.dart';
 
 class AppLayout extends StatelessWidget {
   const AppLayout({Key key}) : super(key: key);
-
+///////////////test hunter////
   @override
   Widget build(BuildContext context) {
     var cubit = Appcubit.get(context);
@@ -17,7 +17,7 @@ class AppLayout extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
-          appBar: AppBar(
+          /*   appBar: AppBar(
             title: const Image(
               image: AssetImage('assets/images/logo.png'),
               width: 110,
@@ -72,7 +72,7 @@ class AppLayout extends StatelessWidget {
                 ],
               )
             ],
-          ),
+          ),*/
           bottomNavigationBar: BottomNavigationBar(
             showUnselectedLabels: true,
             onTap: (index) {
@@ -91,7 +91,73 @@ class AppLayout extends StatelessWidget {
             currentIndex: cubit.currentindex,
             items: cubit.bottomNavItem,
           ),
-          body: cubit.screen[cubit.currentindex],
+          body: NestedScrollView(
+            floatHeaderSlivers: true,
+            headerSliverBuilder: (context, bool innerBoxISscrolled) {
+              return [
+                SliverAppBar(
+                  floating: true,
+                  title: const Image(
+                    image: AssetImage('assets/images/logo.png'),
+                    width: 110,
+                    height: 100,
+                  ),
+                  actions: [
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.cast,
+                          color: Colors.black,
+                          size: 22.0,
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            Navigate(
+                                Screen: NotificationsScreen(),
+                                context: context);
+                          },
+                          icon: Icon(
+                            Icons.notifications_active_outlined,
+                            color: Colors.black,
+                            size: 22.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            Navigate(context: context, Screen: SearchScreen());
+                          },
+                          child: Icon(
+                            Icons.search,
+                            color: Colors.black,
+                            size: 22.0,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        CircleAvatar(
+                          radius: 20,
+                          backgroundColor: Colors.transparent,
+                          backgroundImage: NetworkImage(
+                              'https://ouch-cdn2.icons8.com/ptoWy6sj3pz4wYck5VEVBUWv0oqKvvZC7xlal9zeOjA/rs:fit:392:330/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNDUw/Lzg0ODAwMWY0LTNi/YmMtNDhkMS04MjJi/LThkZTI0YWFmNWEw/YS5wbmc.png'),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ];
+            },
+            body: cubit.screen[cubit.currentindex],
+          ),
         );
       },
     );

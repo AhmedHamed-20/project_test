@@ -27,6 +27,7 @@ class HomeScreen extends StatelessWidget {
 
   Widget buildHome(context) {
     return video(
+      context: context,
       video_photo_url: 'assets/images/home_photo.jpeg',
       vide_name: 'HONOR 50-واخيرا مميزات وعيوب',
       channel_photo_url: 'assets/images/profile_photo.jpeg',

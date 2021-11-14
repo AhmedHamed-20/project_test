@@ -18,22 +18,38 @@ class Appcubit extends Cubit<AppStates> {
   List<BottomNavigationBarItem> bottomNavItem = const [
     BottomNavigationBarItem(
       backgroundColor: Colors.white,
-      icon: Icon(Icons.home),
+      icon: Icon(Icons.home_outlined),
+      activeIcon: Icon(
+        Icons.home,
+        size: 25,
+      ),
       label: 'Home',
     ),
     BottomNavigationBarItem(
       backgroundColor: Colors.white,
       icon: Icon(Icons.movie_creation_outlined),
+      activeIcon: Icon(
+        Icons.movie_creation,
+        size: 25,
+      ),
       label: 'Shorts',
     ),
     BottomNavigationBarItem(
       backgroundColor: Colors.white,
       icon: Icon(Icons.subscriptions_outlined),
+      activeIcon: Icon(
+        Icons.subscriptions,
+        size: 25,
+      ),
       label: 'Subscriptions',
     ),
     BottomNavigationBarItem(
       backgroundColor: Colors.white,
       icon: Icon(Icons.video_library_outlined),
+      activeIcon: Icon(
+        Icons.video_library,
+        size: 25,
+      ),
       label: 'Library',
     ),
   ];
