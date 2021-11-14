@@ -16,8 +16,11 @@ Widget default_Button({
       borderRadius: BorderRadius.circular(radius),
       color: Colors.grey[500],
     ),
-    child: MaterialButton(
+    child: ElevatedButton(
       onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+        primary: Colors.grey[500],
+      ),
       child: Text(
         isUpperCase ? text.toString().toUpperCase() : text,
         style: const TextStyle(
@@ -36,7 +39,7 @@ Widget reelsSideIcons() {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(
+        const Icon(
           Icons.more_horiz,
           color: Colors.white,
         ),

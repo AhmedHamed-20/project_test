@@ -15,6 +15,7 @@ class SubscriptionsScreen extends StatelessWidget {
         listener: (context, state) {},
         builder: (context, state) {
           return SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
                 Padding(
@@ -24,30 +25,32 @@ class SubscriptionsScreen extends StatelessWidget {
                   ),
                   child: Container(
                     color: Colors.grey[50],
-                    height: 115,
+                    height: 110,
                     child: Row(
                       children: [
                         Expanded(
                           child: ListView.separated(
-                            physics: BouncingScrollPhysics(),
+                            physics: const BouncingScrollPhysics(),
                             scrollDirection: Axis.horizontal,
-                            itemBuilder: (Context, index) =>
+                            itemBuilder: (context, index) =>
                                 subscribe_chanal_item(),
-                            separatorBuilder: (Context, index) => SizedBox(
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(
                               width: 10,
                             ),
                             itemCount: 10,
                           ),
                         ),
                         Container(
-                          width: 65,
+                          width: 60,
                           height: double.infinity,
                           color: Colors.grey[50],
-                          child: TextButton(
-                            child: Text(
+                          child: MaterialButton(
+                            onPressed: () {},
+                            child: const Text(
                               'ALL',
                               style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.blue,
                               ),
@@ -58,22 +61,31 @@ class SubscriptionsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Divider(
+                    thickness: 3,
+                    color: Colors.grey[200],
+                  ),
+                ),
                 Container(
-                  height: 70,
-                  color: Colors.grey[50],
+                  height: 55,
                   width: double.infinity,
+                  color: Colors.grey[50],
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.only(start: 10.0),
+                    padding:
+                        const EdgeInsetsDirectional.only(start: 10.0, end: 10),
                     child: SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: [
                           default_Button(
                             onPressed: () {},
                             text: 'ALL',
-                            height: 40,
-                            width: 70,
-                            radius: 20,
+                            height: 35,
+                            width: 60,
+                            radius: 40,
                           ),
                           const SizedBox(
                             width: 10,
@@ -81,9 +93,9 @@ class SubscriptionsScreen extends StatelessWidget {
                           default_Button(
                             onPressed: () {},
                             text: 'Today',
-                            height: 40,
-                            width: 100,
-                            radius: 20,
+                            height: 35,
+                            width: 80,
+                            radius: 40,
                           ),
                           const SizedBox(
                             width: 10,
@@ -91,9 +103,9 @@ class SubscriptionsScreen extends StatelessWidget {
                           default_Button(
                             onPressed: () {},
                             text: 'Continue Watching',
-                            height: 40,
-                            width: 200,
-                            radius: 20,
+                            height: 35,
+                            width: 180,
+                            radius: 40,
                           ),
                           const SizedBox(
                             width: 10,
@@ -101,9 +113,9 @@ class SubscriptionsScreen extends StatelessWidget {
                           default_Button(
                             onPressed: () {},
                             text: 'UnWatching',
-                            height: 40,
-                            width: 150,
-                            radius: 20,
+                            height: 35,
+                            width: 130,
+                            radius: 40,
                           ),
                           const SizedBox(
                             width: 10,
@@ -111,9 +123,9 @@ class SubscriptionsScreen extends StatelessWidget {
                           default_Button(
                             onPressed: () {},
                             text: 'Live',
-                            height: 40,
+                            height: 35,
                             width: 70,
-                            radius: 20,
+                            radius: 40,
                           ),
                           const SizedBox(
                             width: 10,
@@ -121,20 +133,31 @@ class SubscriptionsScreen extends StatelessWidget {
                           default_Button(
                             onPressed: () {},
                             text: 'Posts',
-                            height: 40,
+                            height: 35,
                             width: 90,
-                            radius: 20,
+                            radius: 40,
                           ),
                           const SizedBox(
                             width: 10,
                           ),
-                          default_Button(
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'SETTING',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.blue,
+                              ),
+                            ),
+                          ),
+
+                          /* default_Button(
                             onPressed: () {},
                             text: 'Setting',
-                            height: 40,
+                            height: 35,
                             width: 120,
                             radius: 20,
-                          ),
+                          ),*/
                         ],
                       ),
                     ),
@@ -143,9 +166,10 @@ class SubscriptionsScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ListView.separated(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemBuilder: (context, index) => subscribtion_vedio_item(),
+                    itemBuilder: (context, index) =>
+                        subscribtion_vedio_item(context),
                     separatorBuilder: (context, index) => const SizedBox(
                       height: 20.0,
                     ),
@@ -158,8 +182,9 @@ class SubscriptionsScreen extends StatelessWidget {
         });
   }
 
-  Widget subscribtion_vedio_item() {
+  Widget subscribtion_vedio_item(BuildContext context) {
     return video(
+      context: context,
       video_photo_url: 'assets/images/home_photo.jpeg',
       vide_name: 'HONOR 50-واخيرا مميزات وعيوب',
       channel_photo_url: 'assets/images/profile_photo.jpeg',

@@ -16,9 +16,9 @@ class ShortsScreen extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.transparent,
-          actions: [
+          actions: const [
             Padding(
-              padding: const EdgeInsets.only(right: 12.0),
+              padding: EdgeInsets.only(right: 12.0),
               child: Icon(
                 Icons.camera_alt_outlined,
                 color: Colors.white,
