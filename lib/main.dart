@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:project_test/bloc/cubit/app_cubit.dart';
 import 'package:project_test/bloc/states/app_states.dart';
 import 'package:project_test/layouts/app_layout.dart';
-import 'package:project_test/screens/watching_video.dart';
 import 'package:project_test/shared/style/theme.dart';
 
 void main() {
