@@ -6,7 +6,7 @@ import 'package:project_test/layouts/app_layout.dart';
 import 'package:project_test/screens/watching_video.dart';
 import 'package:project_test/shared/style/theme.dart';
 
-//haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamedsadasd
+//haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaamedsadasddsadas
 void main() {
   runApp(const MyApp());
 }
